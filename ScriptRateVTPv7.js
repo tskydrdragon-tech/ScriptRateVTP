@@ -28,11 +28,11 @@
             if (counts.total >= totalToProcess) break;
 
             try {
-                // --- ĐOẠN MỚI THÊM: Đánh dấu dòng đang xử lý ---
+                // --- Đánh dấu dòng đang xử lý ---
                 const cb = row.querySelector('input[type="checkbox"]');
                 if (cb && !cb.checked) { 
                     cb.click(); 
-                    await wait(300); // Đã đổi delay thành wait để khớp với hàm bên trên
+                    await wait(300);
                 }
                 // ----------------------------------------------
 
@@ -108,7 +108,7 @@
 
     function finish() {
         db.style.background = "#1a1a1a";
-        db.innerHTML = `<b style="color:#0f0">🏁 HOÀN TẤT!</b><hr>📊 Tổng quét: ${counts.total}<br><br><button id="finalClose" style="width:100%;cursor:pointer;padding:5px">ĐÓNG BẢNG</button>`;
+        db.innerHTML = `<b style="color:#0f0">✅ HOÀN TẤT!</b><hr>📊 Tổng quét: ${counts.total}<br><br><button id="finalClose" style="width:100%;cursor:pointer;padding:5px">ĐÓNG BẢNG</button>`;
         document.getElementById('finalClose').onclick = () => db.remove();
     }
 
